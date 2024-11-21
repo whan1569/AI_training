@@ -1,0 +1,70 @@
+1. 입력층(Input Layer)
+    역할
+        모델에 데이터가 들어오는 입구.
+        데이터의 차원이나 형태를 정의합니다.
+    예시
+        Flatten Layer: 다차원 데이터를 1차원 벡터로 펼칩니다.
+        예: 이미지 데이터 (28, 28)을 784 크기의 벡터로 변환.
+        Embedding Layer: 텍스트 데이터를 고정 길이의 밀집 벡터(dense vector)로 변환.
+        예: 자연어 처리(NLP)에서 단어를 벡터로 표현.
+
+2. 은닉층(Hidden Layers)
+데이터의 특징을 추출하고 변환하는 작업을 수행합니다. 뉴런과 활성화 함수를 사용하여 비선형 변환을 제공합니다.
+(1) 밀집층(Dense Layer)
+    역할
+        각 입력 노드를 모든 출력 노드에 연결.
+        데이터를 변환하고 중요한 패턴을 학습.
+    예시
+        Dense(128, activation='relu'): 128개의 노드와 ReLU 활성화 함수를 가진 밀집층.
+        Dense(10, activation='softmax'): 10개 클래스에 대한 확률 출력 (분류 모델의 출력층으로 자주 사용).
+(2) 컨볼루션층(Convolutional Layer)
+    역할
+        이미지나 시계열 데이터를 처리하며, 국소적인 특징(예: 에지, 패턴)을 학습.
+        데이터를 작은 필터(커널)로 스캔하여 특징 맵을 생성.
+    예시
+        Conv2D(32, (3, 3), activation='relu'): 3x3 필터와 ReLU를 사용하는 2D 컨볼루션.
+        Conv1D(64, 3, activation='relu'): 시계열 데이터에서 1D 컨볼루션.
+(3) 순환층(Recurrent Layer)
+    역할
+        시계열 데이터나 순차적 데이터를 처리하며, 데이터 간의 시간적 관계를 학습.
+    예시
+        LSTM(64): 긴 시간 의존성을 학습할 수 있는 LSTM(Long Short-Term Memory) 계층.
+        GRU(64): 간소화된 구조로 빠르게 학습 가능한 GRU(Gated Recurrent Unit) 계층.
+3. 출력층(Output Layer)
+    역할
+        예측 값을 출력.
+        문제 유형에 따라 활성화 함수가 달라짐.
+    예시
+        분류(Classification): Dense(10, activation='softmax') → 다중 클래스 확률.
+        회귀(Regression): Dense(1, activation='linear') → 연속 값 출력.
+4. 특수층(Special Layers)
+특정한 역할을 수행하며, 모델의 성능 향상이나 효율성을 높입니다.
+(1) 정규화층(Normalization Layers)
+    Batch Normalization: 학습 속도를 높이고, 기울기 소실 문제를 완화.
+        ex)tf.keras.layers.BatchNormalization()
+    Layer Normalization: 각 계층의 출력을 정규화.
+(2) 드롭아웃층(Dropout Layer)
+    역할
+        학습 중 일부 뉴런을 랜덤하게 비활성화하여 과적합을 방지.
+        ex)tf.keras.layers.Dropout(0.5)  # 뉴런의 50%를 비활성화
+(3) 풀링층(Pooling Layer)
+    역할
+        특징 맵의 크기를 줄여 계산량 감소.
+        지역적 정보를 요약.
+    예시
+        MaxPooling2D: 최대값을 선택.
+        AveragePooling2D: 평균값을 계산.
+
+모델 계층 설계 팁
+문제 유형에 따라 계층을 선택합니다:
+    이미지 처리 → 컨볼루션 계층
+    시계열/텍스트 → 순환 계층
+    단순 예측 → 밀집 계층
+출력층 활성화 함수를 문제 유형에 맞게:
+    분류 → Softmax
+    회귀 → Linear
+복잡한 구조를 단계적으로 설계:
+    간단한 모델을 먼저 설계 후, 필요 시 추가 계층(정규화, 드롭아웃 등)으로 확장.
+
+
+#특수층(보조 작업) : 과적합 방지,학습안정화,데이터요약  <-> 은닉층(주요 작업) : 데이터 특징 학습,변환
