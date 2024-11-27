@@ -1,0 +1,87 @@
+# AI 평가지표 학습 자료 정리
+
+## 1. 기본적인 분류 모델 평가지표
+- Accuracy: 전체 데이터에서 올바르게 예측한 비율.
+- Precision, Recall, F1-Score:
+  - Precision: 모델이 "긍정"이라고 예측한 것 중 실제로 긍정인 비율.
+  - Recall: 실제 "긍정" 중에서 모델이 얼마나 잘 찾아냈는지.
+  - F1-Score: Precision과 Recall의 조화 평균.
+
+### 추천 자료
+- Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow (Chapter 3)
+- Coursera: Machine Learning (Andrew Ng)
+- Scikit-learn Metrics Documentation: https://scikit-learn.org/stable/modules/classes.html#module-sklearn.metrics
+
+---
+
+## 2. 회귀 모델 평가지표
+- Mean Absolute Error (MAE): 실제 값과 예측 값 차이의 평균.
+- Mean Squared Error (MSE): 제곱 오차의 평균.
+- R² Score: 모델이 데이터의 분산을 얼마나 설명하는지.
+
+### 추천 자료
+- DeepLearning.AI Regression Metrics
+- Kaggle Learn: Intermediate Machine Learning
+
+---
+
+## 3. 불균형 데이터 관련 평가지표
+- ROC-AUC: 분류기의 Threshold에 따른 성능을 측정.
+- PR-AUC: Precision-Recall 관계를 곡선으로 표현.
+- Cohen’s Kappa: 예측과 실제 간의 일치도를 평가.
+
+### 추천 자료
+- 논문: "Evaluation Metrics for Machine Learning" (Saito and Rehmsmeier, 2015)
+- Towards Data Science: Understanding AUC-ROC Curve
+
+---
+
+## 4. 이미지 분류 및 물체 탐지 평가 지표
+- IoU (Intersection over Union): 객체 탐지의 정확도 측정.
+- mAP (mean Average Precision): 여러 클래스에서 평균 IoU 기반 평가.
+- Pixel Accuracy / mIoU: 분할(Segmentation) 모델 평가.
+
+### 추천 자료
+- Deep Learning for Computer Vision with Python by Adrian Rosebrock
+- PyTorch and TensorFlow Object Detection Tutorials: https://pytorch.org/tutorials/
+
+---
+
+## 5. 생성 모델(GAN, Transformer 등) 평가지표
+- FID (Fréchet Inception Distance): 생성된 이미지와 실제 이미지의 유사성을 평가.
+- BLEU/ROUGE: 자연어 처리에서 생성된 텍스트와 기준 텍스트의 유사도를 평가.
+- Perceptual Loss: 이미지 품질 비교.
+
+### 추천 자료
+- 논문: "GANs: A Survey"
+- Text Generation Evaluation Metrics: https://huggingface.co/docs
+
+---
+
+## 6. 실시간 시스템 관련 지표
+- Latency: 모델 응답 속도.
+- Throughput: 초당 처리 가능한 데이터량.
+- Error Rate: 시스템 오류 비율.
+
+### 추천 자료
+- Edge AI 관련 평가 기준 논문: https://arxiv.org/abs/2106.09374
+- NVIDIA AI Performance Benchmark 자료.
+
+---
+
+## 7. 설명 가능한 AI 지표
+- SHAP: 각 특징의 중요도를 설명.
+- LIME: 개별 예측 결과의 설명 가능성.
+- Feature Importance: 모델이 각 특징을 얼마나 사용했는지.
+
+### 추천 자료
+- Interpretable Machine Learning by Christoph Molnar: https://christophm.github.io/interpretable-ml-book/
+- Kaggle SHAP/LIME 튜토리얼: https://www.kaggle.com/learn
+
+---
+
+## 학습 방법
+1. 실습 기반 학습: Kaggle에서 데이터셋을 사용해 지표를 직접 계산하고 분석.
+2. 이론 학습: 관련 책과 논문 읽기.
+3. 튜토리얼 및 코스: Coursera, Udemy, YouTube에서 다양한 강의 수강.
+
