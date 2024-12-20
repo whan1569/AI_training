@@ -1,0 +1,44 @@
+
+LLM 모델 학습 순서 및 모델 추천
+
+1. 기본 개념 및 이론 학습
+   - NLP (자연어 처리): 토큰화, 벡터화, 품사 태깅, 구문 분석, 의미 분석 등.
+   - 머신러닝 기초: 선형 회귀, 로지스틱 회귀, SVM 등 기본 알고리즘 이해.
+
+2. 기본 LLM 모델부터 시작
+   1) RNN (Recurrent Neural Network)
+      - 텍스트의 순차적 데이터 처리 기본 모델.
+   2) LSTM (Long Short-Term Memory)
+      - RNN의 단점을 개선하여 긴 문맥을 잘 처리하는 모델.
+   3) Transformer 모델
+      - 어텐션 메커니즘 기반, 병렬 처리로 긴 텍스트 문맥을 잘 이해하는 혁신적인 모델.
+      - 추천 학습 자료: "Attention is All You Need" 논문
+
+3. 주요 LLM 모델 학습
+   1) BERT (Bidirectional Encoder Representations from Transformers)
+      - 문장 이해 및 분석을 위한 양방향 모델.
+      - 추천 학습 자료: BERT 논문
+   2) GPT 계열 (Generative Pretrained Transformer)
+      - 언어 생성 및 대화형 응답을 위한 모델.
+      - 추천 학습 자료: "Language Models are Few-Shot Learners" (GPT-3 논문)
+   3) T5 (Text-to-Text Transfer Transformer)
+      - 다양한 NLP 작업을 텍스트-투-텍스트 형식으로 처리할 수 있는 모델.
+   4) BART (Bidirectional and Auto-Regressive Transformers)
+      - 텍스트 생성과 문서 요약, 번역 등을 다룰 수 있는 모델.
+
+4. 특화된 모델 학습
+   1) KoGPT & KorBERT (한국어 특화 모델)
+      - 한국어 자연어 처리 및 생성에 특화된 모델.
+   2) CLIP (Contrastive Language-Image Pretraining)
+      - 텍스트와 이미지를 결합하여 이해하는 멀티모달 모델.
+
+5. 고급 주제: Fine-Tuning과 Transfer Learning
+   - 사전 학습된 모델을 특정 작업이나 데이터셋에 맞춰 **파인튜닝**하거나 **전이 학습**을 통해 성능을 최적화하는 기술.
+   
+학습 순서 요약:
+1. NLP 및 머신러닝 기본 개념 학습
+2. 기본 모델 (RNN, LSTM) 학습
+3. Transformer 모델 이해 (Attention, Self-attention 등)
+4. 주요 LLM 모델 학습 (BERT, GPT, T5 등)
+5. 특화된 모델 학습 (KoGPT, CLIP 등)
+6. Fine-Tuning 및 Transfer Learning 이해
